@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet"
+            href="https://kendo.cdn.telerik.com/2017.1.223/styles/kendo.common.min.css"
+            />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="explore.css" />
+
+        <title>Quick Resume</title>
+    </head>
+
+    <body>
+        <div class="container" id="cv-form">
+            <h1 class="text-center my-2 ">Quick Resume</h1>
+            <p class="text-center" id="BlueBerry">By Blueberry Pi</p>
+            <div class="row">
+                <div class="col-md-6 mt-2">
+                    <!-- first column -->
+                    <h3>Personal Information</h3>
+
+                    <div class="form-group mt-2">
+                        <label for="nameField">Name :</label>
+                        <input type="text" class="form-control" id="nameField"
+                            placeholder="Enter Name">
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="contactField">Contact Number :</label>
+                        <input type="text" class="form-control"
+                            id="contactField" placeholder="Enter Contact No.">
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="emailField">Email ID :</label>
+                        <input type="text" class="form-control"
+                            id="emailField" placeholder="Enter Email Address">
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="addressField">Address :</label>
+                        <textarea type="text" class="form-control"
+                            id="addressField" placeholder="Enter Address"
+                            rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="pfpField">Choose Image for your Profile
+                            Photo :</label>
+                        <input type="file" class="form-control" id="pfpField">
+                    </div>
+
+                    <p class="text-secondary my-3">Important Links</p>
+                    <div class="form-group mt-2">
+                        <label for="fbField">Facebook</label>
+                        <input type="text" class="form-control"
+                            id="fbField" placeholder="Enter Link">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="tweetField">Twitter</label>
+                        <input type="text" class="form-control"
+                            id="tweetField" placeholder="Enter Link">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="linkedField">LinkedIn</label>
+                        <input type="text" class="form-control"
+                            id="linkedField" placeholder="Enter link">
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6 mt-2">
+                    <!-- second column  -->
+                    <h3>Professional Information</h3>
+                    <div class="form-group mt-2">
+                        <label for="">Objective :</label>
+                        <textarea class="form-control" placeholder="Enter Here"
+                            rows="4" id="objectiveField"></textarea>
+                    </div>
+
+                    <div class="form-group mt-2" id="we">
+                        <label for="">Work Experience :</label>
+                        <textarea class="form-control weField"
+                            placeholder="Enter Here" rows="2"></textarea>
+                    </div>
+                    <!-- New Text Area Here  -->
+                    <div class="container text-center mt-2 " id="weAddButton">
+                        <button onclick="addNewWEField()" class="btn-primary
+                            btn-sm">ADD</button>
+                    </div>
+
+                    <div class="form-group mt-2" id="aq">
+                        <label for="">Academic Qualification :</label>
+                        <textarea class="form-control aqField"
+                            placeholder="Enter Here" rows="2"></textarea>
+                    </div>
+                    <!-- New Text Area Here  -->
+                    <div class="container text-center mt-2 " id="aqAddButton">
+                        <button onclick="addNewAQField()" class="btn-primary
+                            btn-sm">ADD</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container text-center mt-3">
+                <button onclick="generateCV()" class="btn btn-primary btn-lg">
+                    Generate Resume</button>
+            </div>
+        </div>
+
+        <!-- CV template  -->
+            <div class="container" id="cv-template">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-4 text-center py-5 background"
+                            id="sidebar">
+                            <!-- This is first column -->
+                            <img class="img-fluid myimg" id="pfp-container"
+                                src=""
+                                alt="Profile photo">
+                            <div class="container">
+                                <p id="nameT1">Radib Bin Kabir</p>
+
+                                <div class="icon">
+                                    <div>
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <p id="contactT"></p>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <div>
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <p id="emailT"></p>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <div>
+                                        <i class="fa-solid fa-house"></i>
+                                    </div>
+                                    <div>
+                                        <p id="addressT"></p>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <p><i class="fa-brands fa-facebook"></i>&nbsp;&nbsp;&nbsp;<a
+                                        id="fbT" href="#">facebook</a></p>
+                                <p><i class="fa-brands fa-twitter"></i>&nbsp;&nbsp;&nbsp;<a
+                                        id="tweetT" href="#">Tweeter</a></p>
+                                <p><i class="fa-brands fa-linkedin"></i>&nbsp;&nbsp;&nbsp;<a
+                                        id="linkedT" href="#">LinkedIn</a></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 py-4">
+                            <!-- This is second column -->
+                            <h1 id="nameT2" class="text-center"
+                                style="font-weight:
+                                900">Radib Bin Kabir</h1>
+                            <div class="card mt-5">
+                                <div class="card-header background">
+                                    <h3>Objective</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p id="objectiveT">Lorem ipsum dolor sit
+                                        amet,
+                                        consectetur
+                                        adipisicing elit. Ab eum, officiis
+                                        facilis
+                                        nam
+                                        dolorum, laudantium quisquam repellendus
+                                        sequi
+                                        excepturi hic ad est, dolore
+                                        exercitationem
+                                        doloremque. Tempora iure dolores, fugit
+                                        animi
+                                        earum aliquam quaerat quisquam eligendi
+                                        beatae
+                                        illum perferendis non voluptate quia,
+                                        suscipit
+                                        consequuntur fugiat fuga consectetur
+                                        ipsam,
+                                        impedit molestias ea.</p>
+                                </div>
+                            </div>
+
+                            <div class="card mt-5">
+                                <div class="card-header background">
+                                    <h3>Work Experience</h3>
+                                </div>
+                                <div class="card-body">
+                                    <ul id="weT">
+                                        <li>Lorem ipsum dolor sit, amet
+                                            consectetur
+                                            adipisicing elit. Magni,
+                                            accusantium?</li>
+                                        <li>Lorem ipsum dolor sit, amet
+                                            consectetur
+                                            adipisicing elit. Magni,
+                                            accusantium?</li>
+                                        <li>Lorem ipsum dolor sit, amet
+                                            consectetur
+                                            adipisicing elit. Magni,
+                                            accusantium?</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card mt-5">
+                                <div class="card-header background">
+                                    <h3>Academic Qualification</h3>
+                                </div>
+                                <div class="card-body">
+                                    <ul id="aqT">
+                                        <li>Lorem ipsum dolor sit, amet
+                                            consectetur
+                                            adipisicing elit. Magni,
+                                            accusantium?</li>
+                                        <li>Lorem ipsum dolor sit, amet
+                                            consectetur
+                                            adipisicing elit. Magni,
+                                            accusantium?</li>
+                                        <li>Lorem ipsum dolor sit, amet
+                                            consectetur
+                                            adipisicing elit. Magni,
+                                            accusantium?</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="container mt-3 text-center">
+                                <button onclick="printCV()" id="printBtn"
+                                    class="btn
+                                    background">
+                                    Print Resume
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <script
+            src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2017.1.223/js/jszip.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2021.1.330/js/kendo.all.min.js"></script>
+        <script>
+            //alert("loading");
+//import jsPDF from 'jspdf';
+
+function addNewWEField() {
+    //console.log("Adding New Field");
+  
+    let newNode = document.createElement("textarea");
+    newNode.classList.add("form-control");
+    newNode.classList.add("weField");
+    newNode.classList.add("mt-2");
+    newNode.setAttribute("placeholder", "Enter Here");
+    newNode.setAttribute("row", 3);
+  
+    let weOb = document.getElementById("we");
+    let weAddButtonOb = document.getElementById("weAddButton");
+  
+    weOb.parentNode.insertBefore(newNode, weAddButtonOb);
+  }
+  
+  function addNewAQField() {
+    //console.log("Adding New Field");
+  
+    let newNode = document.createElement("textarea");
+    newNode.classList.add("form-control");
+    newNode.classList.add("aqField");
+    newNode.classList.add("mt-2");
+    newNode.setAttribute("placeholder", "Enter Here");
+    newNode.setAttribute("row", 3);
+  
+    let aqOb = document.getElementById("aq");
+    let aqAddButtonOb = document.getElementById("aqAddButton");
+  
+    aqOb.parentNode.insertBefore(newNode, aqAddButtonOb);
+  }
+  
+  // generating resume
+  function generateCV() {
+    //console.log("Generate CV");
+    let nameField = document.getElementById("nameField").value;
+    let nameT1 = document.getElementById("nameT1");
+    let nameT2 = document.getElementById("nameT2");
+    nameT1.innerHTML = nameField;
+    nameT2.innerHTML = nameField;
+  
+    document.getElementById("contactT").innerHTML =
+      document.getElementById("contactField").value;
+    document.getElementById("addressT").innerHTML =
+      document.getElementById("addressField").value;
+    document.getElementById("emailT").innerHTML =
+      document.getElementById("emailField").value;
+    document.getElementsByClassName("myimg").src =
+      document.getElementById("pfpField").value;
+    document.getElementById("fbT").href =
+      document.getElementById("fbField").value;
+    document.getElementById("tweetT").href =
+      document.getElementById("tweetField").value;
+    document.getElementById("linkedT").href =
+      document.getElementById("linkedField").value;
+  
+    //objective
+    document.getElementById("objectiveT").innerHTML =
+      document.getElementById("objectiveField").value;
+  
+    //work experience
+    let wes = document.getElementsByClassName("weField");
+    let str = "";
+    for (let e of wes) {
+      str = str + `<li>${e.value}</li>`;
+    }
+    document.getElementById("weT").innerHTML = str;
+  
+    //Academic Qualification
+    let aqs = document.getElementsByClassName("aqField");
+    let str1 = "";
+    for (let e of aqs) {
+      str1 = str1 + `<li>${e.value}</li>`;
+    }
+    document.getElementById("aqT").innerHTML = str1;
+  
+    document.getElementById("cv-form").style.display = "none";
+    document.getElementById("cv-template").style.display = "block";
+  }
+  
+  const fileInput = document.getElementById("pfpField");
+  const imageOutput = document.getElementById("pfp-container");
+  
+  fileInput.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+  
+    reader.addEventListener("load", (event) => {
+      imageOutput.src = event.target.result;
+    });
+  
+    reader.readAsDataURL(file);
+  });
+  
+  // function printCV(){
+  //   document.getElementById("printBtn").style.display="none";
+  //   const element = document.getElementById("cv-template");
+  //   html2pdf()
+  //   .from(element)
+  //   .save();
+  // }
+  
+  kendo.pdf.defineFont({
+    "DejaVu Sans":
+      "https://kendo.cdn.telerik.com/2016.2.607/styles/fonts/DejaVu/DejaVuSans.ttf",
+    "DejaVu Sans|Bold":
+      "https://kendo.cdn.telerik.com/2016.2.607/styles/fonts/DejaVu/DejaVuSans-Bold.ttf",
+    "DejaVu Sans|Bold|Italic":
+      "https://kendo.cdn.telerik.com/2016.2.607/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf",
+    "DejaVu Sans|Italic":
+      "https://kendo.cdn.telerik.com/2016.2.607/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf",
+  });
+  
+  // function getPDF(selector) {
+  //   kendo.drawing.drawDOM($(selector)).then(function (group) {
+  //     kendo.drawing.pdf.saveAs(group, "yourResume.pdf");
+  //   });
+  // }
+  
+  
+  function getPDF(selector) {
+    var paperSize = "A3";
+  
+    kendo.drawing.drawDOM($(selector), {
+      paperSize: paperSize
+    }).then(function (group) {
+      kendo.drawing.pdf.saveAs(group, "yourResume.pdf");
+    });
+  }
+  
+  $("#printBtn").click(function () {
+    document.getElementById("printBtn").style.display = "none";
+    getPDF("#cv-template");
+  });
+        </script>
+    </body>
+</html>

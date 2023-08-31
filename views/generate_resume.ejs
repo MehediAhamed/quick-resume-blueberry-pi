@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <div class="topbar mt-3 d-flex align-content-center">
+            
+          
+                <a href="user_dashboard.html" class="btn btn-outline-primary">Go Back</a>
+             
+    
+            <span class="ms-3 fs-4">Generate Resume</span>
+        </div>
+
+        <div class="form-area d-flex justify-content-center align-items-center">
+
+            
+            <form action="/generate_resume/create" method="POST" class="mt-3 w-50 mx-auto ">
+                <select class="form-select mb-3" aria-label="Default select example" name="profile">
+                    <option selected>Select Profile</option>
+                    <%  data.forEach(function(s){ console.log(s.profile_name); %>
+                   <option value=<%= s.profile_id %>><%= s.profile_name %></option>
+                    <%});%>
+                    
+                </select>
+
+                <select class="form-select my-3" aria-label="Default select example" name="profile_type">
+                    <option selected>Resume Type</option>
+                    <option value="1">Industrial</option>
+                    <option value="2">Academic</option>
+                    
+                </select>
+                <button type="submit" class="btn btn-primary px-5">Next</button>
+                </form>
+
+            </form>
+        </div>
+
+    </main>
+</body>
+
+</html>

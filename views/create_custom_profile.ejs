@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <div class="topbar mt-3 d-flex align-content-center">
+            <a href="user_dashboard.html" class="btn btn-outline-primary">Go Back</a>
+            <span class="ms-3 fs-4">Create Custom Profile</span>
+        </div>
+
+
+        <form action="/create_custom_profile/create" method="POST">
+            <input type="text" class="form-control mb-2" placeholder="Profile Name" id="profile" name="profile"
+                class="form-control form-control-lg" />
+
+            <textarea class="form-control mb-2" placeholder="Profile Objective" id="objective" name="objective"
+                style="height: 100px"></textarea>
+
+            <textarea class="form-control mb-2" placeholder="Abouts yourself" id="about" name="about"
+                style="height: 100px"></textarea>
+            <textarea type="text" class="form-control mb-2" placeholder="Skill (Write with comma for multiple)"
+                id="skill" name="skill" class="form-control form-control-lg" style="height: 100px" ></textarea>
+            <textarea type="text" class="form-control mb-2" placeholder="Experience" id="experience" name="experience"
+                class="form-control form-control-lg" style="height: 100px" ></textarea>
+            <textarea type="text" class="form-control mb-2" placeholder="Achievement" id="Achievement"
+                name="achievement" class="form-control form-control-lg" style="height: 100px" ></textarea>
+            <button type="submit" class="btn btn-primary">Add Profile</button>
+
+
+        </form>
+    </main>
+</body>
+
+</html>

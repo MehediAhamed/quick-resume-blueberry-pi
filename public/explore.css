@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Work+Sans:wght@300;500;700&display=swap');
+
+* {
+  font-family: 'Work Sans', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+@media print {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+body {
+  background-color: rgb(255, 254, 250);
+}
+
+input {
+  border: none;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 20rem;
+  background: #ebebeb30;
+  box-shadow: inset 3px 2px 8px 1px rgba(34, 34, 34, 0.274),
+    inset -3px -2px 8px 1px rgba(234, 234, 234, 0.542);
+}
+
+textarea {
+  border: none;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 20rem;
+  background: #ebebeb30;
+  box-shadow: inset 3px 2px 8px 1px rgba(34, 34, 34, 0.274),
+    inset -3px -2px 8px 1px rgba(234, 234, 234, 0.542);
+}
+
+button:hover {
+  color: rgb(246, 223, 192);
+}
+
+button {
+  text-align: center;
+  width: 10rem;
+  margin-top: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 20rem;
+  border: #ddd;
+  background-color: #333333e8;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0.5rem 0.3rem 0.4rem rgba(0, 0, 0, 0.268);
+}
+
+.btn {
+  border-radius: 25rem;
+  width: auto;
+  margin: 2rem;
+  padding: 12px;
+  background-color: #003c62;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0.5rem 0.3rem 0.4rem rgba(0, 0, 0, 0.268);
+}
+
+.btn:hover{
+  background-color: rgb(255, 255, 255);
+  color: #003c62;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#pfp-container {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.background {
+  color: #fff;
+  background-color: #003c62;
+}
+
+#cv-template {
+    /* width: 790;
+    height: 1000; */
+  display: none;
+  position: static;
+  background-color: rgb(218, 245, 255);
+  margin: 0;
+  padding: 0;
+}
+
+.icon{
+  display: grid;
+  margin: 1px;
+}
+
+h1{
+  font-family: "DejaVu Sans";
+}
+
+/* Style for Personal Information section */
+.col-md-6 {
+  background-color: #31313124;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.329);
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"], textarea, input[type="file"] {
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  padding: 5px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+}
+
+.text-secondary {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style for Important Links section */
+.form-group {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-right: 10px;
+}
+
+.form-group input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+}
+
+#BlueBerry{
+  font-size: large;
+  color: #0021c6;
+}
+
+#cv-template{
+  margin-bottom: 100rem;
+}
+
+
+

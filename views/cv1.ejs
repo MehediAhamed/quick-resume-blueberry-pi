@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+        <link rel="stylesheet"
+            href="https://kendo.cdn.telerik.com/2017.1.223/styles/kendo.common.min.css"
+            />
+<!--         
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="cv1.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" id="cv-template">
+        <div class="left-side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img id="myimg"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx9tjaExsY-srL4VsHNE_OKGVCJ-eIFNBktw&usqp=CAU"
+                        alt="profile-pic">
+                </div>
+                <h2> <%=  data.username; %>
+                    <br><span>Web Developer</span></h2>
+            </div>
+            <div class="contactInfo">
+                <h2 class="title">Contact Info</h2>
+                <ul>
+                    <li><span class="icon"><i class="fa-solid fa-phone"></i></span>
+                        <span class="text"> <%=  data.contact; %></span>
+                    </li>
+                    <li><span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                        <span class="text"> <%=  data.email; %></span>
+                    </li>
+                    
+                    <li><span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                        <span class="text"> <%=  data.address; %></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contactInfo education">
+                <h2 class="title">Education</h2>
+                <ul>
+                    <li>
+                        <h5>2021-2023</h5>
+                        <h4>Masters degree in Computer Science</h4>
+                        <h4>University Name</h4>
+                    </li>
+                    <li>
+                        <h5>2021-2023</h5>
+                        <h4>Masters degree in Computer Science</h4>
+                        <h4>University Name</h4>
+                    </li>
+                    <li>
+                        <h5>2016-2020</h5>
+                        <h4>Bachelors degree in Computer Science</h4>
+                        <h4>University Name</h4>
+                    </li>
+                    <li>
+                        <h5>2014-2016</h5>
+                        <h4>Matriculation degree in Computer Science</h4>
+                        <h4>University Name</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo languages">
+                <h3 class="title">Languages</h3>
+                <ul>
+                    <li>
+                        <span class="text">Bangla</span>
+                        <span class="percent">
+                            <div style="width:100%"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                            <div style="width:90%"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">French</span>
+                        <span class="percent">
+                            <div style="width:80%"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="right-side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <p> <%=  data.about; %></p>
+            </div>
+            <div class="about">
+                <h2 class="title2">Experience</h2>
+                <div class="box">
+                    <div class="year_company">
+                       <p> <%=  data.experience; %></p>
+                    </div>
+                    
+                </div>
+                
+           
+            </div>
+            <div class="about">
+                <h2 class="title2">Achievements</h2>
+                
+                <%=  data.achievement; %>
+            </div>
+            <div class="contactInfo languages skills">
+                <h2 class="title2">Professional Skills</h2>
+                <%=  data.skill; %>
+            </div>
+
+
+
+            <div class="about interest">
+                <h2 class="title2">Interest</h2>
+                <ul>
+                    <li><i class="fa-solid fa-gamepad"></i></i>Gaming</li>
+                    <li><i class="fa-solid fa-utensils"></i>Cooking</li>
+                    <li><i class="fa-solid fa-music"></i>Singing</li>
+                    <li><i class="fa-solid fa-book-open"></i>Reading</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <button onclick="printCV()" id="printBtn"
+                                    class="btn
+                                    background">
+                                    Print Resume
+                                </button>
+
+
+                                <script
+                                src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+                                <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2017.1.223/js/jszip.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2021.1.330/js/kendo.all.min.js"></script>
+
+        <script>
+            kendo.pdf.defineFont({
+  "DejaVu Sans":
+    "https://kendo.cdn.telerik.com/2016.2.607/styles/fonts/DejaVu/DejaVuSans.ttf",
+  "DejaVu Sans|Bold":
+    "https://kendo.cdn.telerik.com/2016.2.607/styles/fonts/DejaVu/DejaVuSans-Bold.ttf",
+  "DejaVu Sans|Bold|Italic":
+    "https://kendo.cdn.telerik.com/2016.2.607/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf",
+  "DejaVu Sans|Italic":
+    "https://kendo.cdn.telerik.com/2016.2.607/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf",
+});
+
+
+// function getPDF(selector) {
+//   var paperSize = "A4";
+
+//   kendo.drawing.drawDOM($(selector), {
+//     paperSize: paperSize
+//   }).then(function (group) {
+//     kendo.drawing.pdf.saveAs(group, "yourResume.pdf");
+//   });
+// }
+function getPDF(selector) {
+  kendo.drawing.drawDOM($(selector)).then(function (group) {
+    kendo.drawing.pdf.saveAs(group, "yourResume.pdf");
+  });
+}
+
+$("#printBtn").click(function () {
+  document.getElementById("printBtn").style.display = "none";
+  getPDF("#cv-template");
+});
+        </script>
+
+</body>
+
+</html>
