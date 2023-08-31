@@ -1,7 +1,7 @@
 # Quick Resume
 
 Starting point of our project : ./index.html file \
-Live Preview : [https://thdihan.github.io/quick-resume-blueberry-pi/](https://thdihan.github.io/quick-resume-blueberry-pi/)
+Live Preview :
 ### Team Blueberry Pi : 
 - Tanvir Hossain Dihan
 - Mosammat Zannatul Samarukh
